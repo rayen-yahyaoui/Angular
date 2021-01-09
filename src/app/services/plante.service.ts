@@ -18,13 +18,13 @@ export class PlanteService {
 
 
   constructor(private http : HttpClient) { 
-    /*this.voitures = [
-      {idVoiture : 1, marque : "Kia", matricule:"123 4578TN",prix :70.600, dateVente
+    /*this.plantes = [
+      {idPlante : 1, nomPlante : "Tulip", couleurPlante:"Move",prix :70.600, dateVente
        : new Date("01/12/2019")},
-       {idVoiture : 2, marque : "X five", matricule:"122 78578TN",prix :100.600, dateVente
-       : new Date("01/12/2020")},
-       {idVoiture : 3, marque : "Range Rover", matricule:"124 8978TN",prix :300.600, dateVente
-       : new Date("01/01/2021")}
+      {idPlante : 2, nomPlante : "Lacrun", couleurPlante:"Red",prix :32.5, dateVente
+       : new Date("01/01/2012")},
+      {idPlante : 3, nomPlante : "Rose", couleurPlante:"Pink",prix :12.5, dateVente
+       : new Date("13/01/2021")}
        ];*/
   }
 

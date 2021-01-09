@@ -13,7 +13,7 @@ export class PlantesComponent implements OnInit {
   plantes! : Plante[];
   constructor(private planteService: PlanteService ,
     private router :Router) {
-    //this.voitures = voitureService.listeVoitures();
+    //this.plantes = planteService.listePlantes();
     }
 
   ngOnInit(): void {
