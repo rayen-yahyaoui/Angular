@@ -1,41 +1,47 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Plante } from '../model/plante.model';
 import { PlanteService } from '../services/plante.service';
+import {Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-plantes',
-  templateUrl:'./plantes.component.html',
-  styleUrls: ['./plantes.component.css']
+  templateUrl: './plantes.component.html'
 })
 export class PlantesComponent implements OnInit {
-
-  plantes !: Plante[] ;
-
-  constructor(private planteService: PlanteService, private router: Router) {
-
-  // this.plantes = planteService.listePlantes();
-  }
+  plantes! : Plante[];
+  constructor(private planteService: PlanteService ,
+    private router :Router) {
+    //this.voitures = voitureService.listeVoitures();
+    }
 
   ngOnInit(): void {
-    this.planteService.listePlantes().subscribe(plant => {
-      console.log(plant);
-      this.plantes = plant;
+    this.planteService.listePlantes().subscribe(p => {
+      console.log(p);
+      this.plantes  = p;
       });
       
   }
 
 
-/*supprimerPlante(p: Plante)
-{
-let conf = confirm("Etes-vous sûr ?");
+  supprimerPlante(p: Plante)
+  {
+  let conf = confirm("Etes-vous sûr ?");
   if (conf)
-    this.planteService.supprimerPlante(p.idPlante).subscribe(() => {
-    console.log("plante supprimé");
+  this.planteService.supprimerPlante(p.idPlante).subscribe(() => {
+  console.log("plante supprimé");
+  this.SuprimerPlanteDuTableau(p);
+
+  });
+  }
+
+  SuprimerPlanteDuTableau(p : Plante) {
+    this.plantes.forEach((cur, index) => {
+    if(p.idPlante=== cur.idPlante) {
+    this.plantes.splice(index, 1);
+    }
     });
-        this.router.navigate(['produits']).then(() => {
-        window.location.reload();
-        });
-}*/
+    }
 
 }

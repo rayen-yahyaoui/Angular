@@ -1,37 +1,36 @@
 <div class="container">
     <div>
-    <h2>Modifier une Plante :</h2>
+    <h2>Modifier une plante :</h2>
     </div>
     <form >
-    <div class="col-sm-2 col-md-2 col-lg-2">
-    <label >ID Plante</label>
+    <div   class="col-sm-2 col-md-2 col-lg-2">
+    <label >ID plante</label>
     <input readonly type="text" [(ngModel)]="currentPlante.idPlante"
     name="idPlante" class="form-control">
     </div>
     <div class="col-sm-4 col-md-4 col-lg-4" >
-    <label >Nom Plante</label>
+    <label >Nom plante</label>
     <input type="text"[(ngModel)]= "currentPlante.nomPlante"
     name="nomPlante" class="form-control">
     </div>
-
     <div class="col-sm-4 col-md-4 col-lg-4" >
-        <label >Couleur Plante</label>
+        <label >couleur plante</label>
         <input type="text"[(ngModel)]= "currentPlante.couleurPlante"
         name="couleurPlante" class="form-control">
         </div>
-
     <div class="col-sm-2 col-md-2 col-lg-2">
-    <label >Prix Plante</label>
-    <input type="number" [(ngModel)]= "currentPlante.prixPlante"
-    name="prixPlante" class="form-control">
+    <label >Prix plante</label>
+    <input type="number" [(ngModel)]= "currentPlante.prix"
+    name="prix" class="form-control">
     </div>
     <div class="col-sm-4 col-md-4 col-lg-4">
-    <label >Date de Vente</label>
-    <input type="date" [ngModel]="currentPlante.dateVente | date: 'yyyy-MM-dd'" ngModelChange)=" currentPlante.dateVente= $event"   
-    name="dateVente" class="form-control">
-    </div>
-    <div class="mt-2">
-    <button type="submit" (click)="updatePlante()" class="btn btn-success">Modifer</button>
-    </div>
+    <label >Date vente</label>
+    <input type="date" [ngModel]="currentPlante.dateVente
+    | date: 'yyyy-MM-dd'"
+    (ngModelChange)=" currentPlante.dateVente= $event" name="dateVente" class="form-control">
+</div>
+<div class="mt-2">
+<button type="submit" (click)="updatePlante()" class="btn btn-success">Modifer</button>
+</div>
 </form>
 </div>
